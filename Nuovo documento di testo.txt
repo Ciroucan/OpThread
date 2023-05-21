@@ -1,0 +1,119 @@
+public class ThreadE {
+	public int a;
+	public int b;
+	public int c;
+	public int ris1;
+	public int ris2;
+	public int ris3;
+	public int ris4;
+	public int ris5;
+	
+	
+	public ThreadE(int a, int b, int c) {
+		this.a=a;
+		this.b=b;
+		this.c=c;
+		ris1=0;
+		ris2=0;
+		ris3=0;
+		ris4=0;
+		ris5=0;
+	}
+	
+	
+}
+
+
+public class Op1 extends Thread{
+	ThreadE dati;
+	
+	public Op1 (ThreadE dati) {
+		this.dati=dati;
+	}
+	
+	public void run() {
+		
+		dati.ris1=(2*dati.a+4);
+		System.out.print("risultato operazione 1:"+ dati.ris1);
+	}
+	
+	
+}
+
+
+
+public class Op2 extends Thread{
+	ThreadE dati;
+	
+	public Op2 (ThreadE dati) {
+		this.dati=dati;
+	}
+	
+	public void run() {
+		
+		dati.ris2=(7*dati.b+3);
+		System.out.print("risultato operazione 2:"+ dati.ris2);
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+public class Op3 extends Thread{
+	ThreadE dati;
+	
+	public Op3 (ThreadE dati) {
+		this.dati=dati;
+	}
+	
+	public void run() {
+		
+		dati.ris3=(dati.ris1*dati.ris2);
+		System.out.print("risultato operazione 3:"+ dati.ris3);
+	}
+	
+	
+}
+
+
+
+
+public class Op4 extends Thread{
+	ThreadE dati;
+	
+	public Op4 (ThreadE dati) {
+		this.dati=dati;
+	}
+	
+	public void run() {
+		
+		dati.ris4=(5*dati.ris3);
+		System.out.print("risultato operazione 4:"+ dati.ris4);
+	}
+	
+	
+}
+
+
+
+public class Op5 extends Thread{
+	ThreadE dati;
+	
+	public Op5 (ThreadE dati) {
+		this.dati=dati;
+	}
+	
+	public void run() {
+		
+		dati.ris5=(dati.ris4-10*dati.c);
+		System.out.print("risultato operazione 5:"+ dati.ris5);
+	}
+	
+	
+}
